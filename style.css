@@ -1,0 +1,450 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Cabeçalho */
+header {
+    background-color: #e8e8e6;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    color: #2c3e50;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    margin-left: 20px;
+    font-size: 0.9rem;
+    transition: color 0.3s; /* Efeito suave ao passar o mouse */
+}
+
+nav a:hover {
+    color: #555;
+}
+
+/* Banner Principal */
+.banner {
+    /* Certifique-se que a imagem empresaDaniel.jpg está na mesma pasta */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('empresaDaniel.jpg');
+    
+    height: 80vh;
+    background-size: cover;
+    background-position: center;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.banner h1 {
+    color: white;
+    font-size: 3rem;
+    font-weight: bold;
+    max-width: 800px;
+    line-height: 1.2;
+}
+/* --- Estilos da Seção de Serviços --- */
+
+.servicos {
+    padding: 60px 50px;
+    background-color: #f4f4f4; /* Fundo levemente cinza para destacar os cards brancos */
+}
+
+.titulo-servicos {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #2c3e50;
+    text-transform: lowercase; /* Deixa minúsculo como na imagem 'serviços' */
+}
+
+/* Container que organiza os 3 cards lado a lado */
+.grade-servicos {
+    display: grid;
+    /* Cria colunas automáticas. Se a tela for pequena, fica um embaixo do outro */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px; /* Espaço entre os cards */
+}
+
+/* O Cartão Individual */
+.card {
+    background-color: white;
+    border-radius: 8px; /* Cantos arredondados */
+    overflow: hidden; /* Garante que a imagem não saia das bordas arredondadas */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Sombra suave */
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Efeito de subir um pouquinho ao passar o mouse */
+}
+
+/* Imagem do Cartão */
+.card img {
+    width: 100%;
+    height: 250px; /* Altura fixa para todas ficarem iguais */
+    object-fit: cover; /* Corta a imagem para preencher sem esticar */
+}
+
+/* Texto dentro do Cartão */
+.card-info {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.card-info h3 {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.card-info p {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* Botão Agendar */
+.card-info button {
+    background-color: #1a2b42; /* Azul escuro da referência */
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 20px; /* Borda bem arredondada estilo pílula */
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%; /* Botão ocupa a largura toda */
+}
+
+.card-info button:hover {
+    background-color: #2c3e50; /* Azul um pouco mais claro no mouse over */
+}
+/* --- Estilos da Seção Sobre --- */
+
+.sobre {
+    display: flex; /* Coloca imagem e texto lado a lado */
+    width: 100%;
+    background-color: #e8e8e6; /* Cor de fundo cinza claro igual da referência */
+    align-items: stretch; /* Faz as duas metades terem a mesma altura */
+}
+
+/* Configuração da metade da Imagem */
+.sobre-imagem {
+    flex: 1; /* Ocupa 50% do espaço */
+    width: 50%;
+}
+
+.sobre-imagem img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Garante que a foto cubra o espaço sem distorcer */
+    display: block; /* Remove espaços brancos indesejados abaixo da imagem */
+    min-height: 600px; /* Garante uma altura mínima para ficar imponente */
+}
+
+/* Configuração da metade do Texto */
+.sobre-conteudo {
+    flex: 1; /* Ocupa os outros 50% do espaço */
+    width: 50%;
+    padding: 60px 80px; /* Espaçamento interno generoso para o texto respirar */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centraliza o texto verticalmente */
+}
+
+.sobre-conteudo h2 {
+    font-size: 3rem; /* Tamanho grande do título */
+    color: #000;
+    margin-bottom: 30px;
+    font-weight: 500;
+    line-height: 1.1;
+}
+
+.sobre-conteudo p {
+    font-size: 1rem;
+    color: #444; /* Cinza escuro para leitura confortável */
+    line-height: 1.6; /* Espaçamento entre linhas */
+    margin-bottom: 40px;
+    text-align: justify; /* Texto justificado para ficar alinhado */
+}
+
+/* Botão Saiba Mais */
+.sobre-conteudo button {
+    background-color: #1a2b42; /* O mesmo azul escuro elegante */
+    color: white;
+    border: none;
+    padding: 15px 50px; /* Botão mais largo */
+    border-radius: 30px; /* Borda bem redonda (pílula) */
+    font-weight: bold;
+    font-size: 0.9rem;
+    cursor: pointer;
+    align-self: flex-start; /* Alinha o botão à esquerda */
+    transition: background-color 0.3s;
+}
+
+.sobre-conteudo button:hover {
+    background-color: #2c3e50;
+}
+
+/* Ajuste para Celulares (Telas menores que 768px) */
+@media (max-width: 768px) {
+    .sobre {
+        flex-direction: column; /* Coloca um embaixo do outro no celular */
+    }
+    .sobre-imagem, .sobre-conteudo {
+        width: 100%; /* Ocupam 100% da largura */
+    }
+    .sobre-conteudo {
+        padding: 40px 20px; /* Menos espaçamento no celular */
+    }
+    .sobre-imagem img {
+        min-height: 300px; /* Altura menor para a imagem no celular */
+    }
+}
+/* --- Estilos da Seção Redes Sociais --- */
+
+.social {
+    padding: 60px 50px;
+    background-color: #e8e8e6; /* Mesmo fundo cinza claro das outras seções */
+    text-align: center; /* Centraliza o título e o botão */
+}
+
+.social h2 {
+    font-size: 2.5rem;
+    color: #000;
+    margin-bottom: 40px;
+    font-weight: 500;
+}
+
+/* A Grade de 4 colunas */
+.social-grid {
+    display: grid;
+    /* Cria 4 colunas de tamanho igual */
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 20px; /* Espaço entre os blocos */
+    margin-bottom: 40px;
+}
+
+/* O "Cartão" que segura o logo */
+.social-card {
+    background-color: white; /* Fundo branco para destacar os logos */
+    height: 250px; /* Altura fixa igual à referência visual */
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.social-card:hover {
+    transform: translateY(-5px); /* Efeito suave ao passar o mouse */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Configuração dos Logos */
+.social-card img {
+    width: 200px; /* Tamanho controlado para o logo não ficar gigante */
+    height: px;
+    object-fit: contain; /* Garante que o logo apareça inteiro */
+}
+
+/* Botão Redes Sociais */
+.social button {
+    background-color: #1a2b42;
+    color: white;
+    border: none;
+    padding: 15px 50px;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.social button:hover {
+    background-color: #2c3e50;
+}
+
+/* Responsividade para Celular */
+@media (max-width: 768px) {
+    .social-grid {
+        grid-template-columns: repeat(2, 1fr); /* No celular, mostra 2 por linha */
+    }
+}
+
+@media (max-width: 480px) {
+    .social-grid {
+        grid-template-columns: 1fr; /* Em telas muito pequenas, 1 por linha */
+    }
+}
+/* --- Estilos da Seção Fale Conosco --- */
+.contato {
+    padding: 80px 50px;
+    background-color: #e8e8e6; /* Fundo cinza claro padrão do site */
+    color: #000;
+}
+
+.contato-container {
+    display: flex; /* Coloca texto e formulário lado a lado */
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto; /* Centraliza o bloco na tela */
+    gap: 80px; /* Espaço grande entre o texto e o formulário */
+}
+
+/* Lado Esquerdo */
+.contato-texto {
+    flex: 1;
+    max-width: 400px;
+}
+
+.contato-texto h2 {
+    font-size: 3rem;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.contato-texto p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #333;
+}
+
+/* Lado Direito (Formulário) */
+.contato-form {
+    flex: 2; /* Formulário ocupa mais espaço que o texto */
+}
+
+/* Linha do Nome e Sobrenome */
+.nome-sobrenome {
+    display: flex;
+    gap: 20px; /* Espaço entre os dois campos */
+}
+
+.input-group {
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.input-group label {
+    display: block;
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+    color: #333;
+    font-weight: 500;
+}
+
+/* Estilo das caixas de texto (Inputs) */
+.contato-form input, 
+.contato-form textarea {
+    width: 100%;
+    padding: 15px;
+    background-color: transparent; /* Fundo transparente igual da imagem */
+    border: 1px solid #333; /* Borda preta fina */
+    border-radius: 50px; /* Bordas bem redondas (pílula) */
+    font-size: 1rem;
+    outline: none; /* Tira o brilho padrão ao clicar */
+}
+
+/* Ajuste específico para a caixa de mensagem */
+.contato-form textarea {
+    border-radius: 20px; /* Borda menos redonda para o quadrado de texto */
+    resize: none; /* Impede que estiquem a caixa */
+}
+
+/* Botão Enviar */
+.contato-form button {
+    background-color: #1a2b42;
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    border-radius: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+.contato-form button:hover {
+    background-color: #2c3e50;
+}
+
+/* --- Estilos do Rodapé (Footer) --- */
+footer {
+    background-color: #e8e8e6;
+    padding: 60px 50px;
+    /* Linha sutil separando se necessário, mas a imagem parece limpa */
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end; /* Alinha o conteúdo por baixo */
+    margin-top: 50px;
+}
+
+.footer-esquerdo h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.footer-esquerdo p {
+    font-size: 0.8rem;
+    color: #666;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.footer-direito {
+    display: flex;
+    gap: 80px; /* Espaço entre Localização e Contato */
+}
+
+.footer-coluna h4 {
+    font-size: 1rem;
+    margin-bottom: 15px;
+    font-weight: bold;
+    color: #333;
+}
+
+.footer-coluna p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #555;
+}
+
+/* Responsividade (Para Celular) */
+@media (max-width: 768px) {
+    .contato-container {
+        flex-direction: column; /* Um embaixo do outro */
+        gap: 40px;
+    }
+    
+    .nome-sobrenome {
+        flex-direction: column; /* Nome e Sobrenome empilhados no celular */
+        gap: 0;
+    }
+    
+    footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 40px;
+    }
+    
+    .footer-direito {
+        flex-direction: column;
+        gap: 30px;
+    }
+}
